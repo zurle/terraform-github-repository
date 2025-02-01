@@ -35,9 +35,9 @@ variable "pages" {
 }
 
 variable "access_list" {
-  type        = map(any)
-  description = "Access map for teams, format: { team_id = permission }."
-  default     = {}
+  type        = list(any)
+  description = "Access map for teams, format: [{ team_id = 'DevOps',  permission = 'admin' }]."
+  default     = []
 }
 
 variable "required_status_checks_context" {

@@ -31,10 +31,10 @@ resource "github_repository" "repo" {
 
 # Assign repository access to teams
 resource "github_team_repository" "repo_access" {
-  for_each   = var.access_list
-  team_id    = each.key
+  for_each   = { for idx, team in var.access_list : idx => team }
+  team_id    = each.value.team_id
   repository = github_repository.repo.name
-  permission = each.value
+  permission = each.value.permission
 
   lifecycle {
     ignore_changes = [team_id, permission]
