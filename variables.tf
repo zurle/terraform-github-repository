@@ -62,4 +62,6 @@ variable "branch_protections" {
     }))
   }))
   description = "Branch protection configuration."
+
+  default = []
 }
