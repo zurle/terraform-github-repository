@@ -62,18 +62,4 @@ variable "branch_protections" {
     }))
   }))
   description = "Branch protection configuration."
-  default = [{
-    branch              = "main"
-    allows_force_pushes = false
-    required_status_checks = {
-      strict   = true
-      contexts = []
-    }
-    required_pull_request_reviews = {
-      dismiss_stale_reviews  = true
-      restrict_dismissals    = false
-      dismissal_restrictions = []
-      pull_request_bypassers = []
-    }
-  }]
 }

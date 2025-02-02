@@ -52,7 +52,7 @@ resource "github_branch" "main" {
 resource "github_branch" "develop" {
   count      = var.create_develop_branch ? 1 : 0
   repository = github_repository.repo.name
-  branch     = "develop"
+  branch     = "dev"
 }
 
 # Set default branch (either main or develop)
